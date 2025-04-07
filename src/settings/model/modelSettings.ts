@@ -8,8 +8,9 @@ import displayPerplexitySettings from "./perplexity/perplexitySettings";
 import displayMistralSettings from "./mistral/mistralSettings";
 import displayCohereSettings from "./cohere/cohereSettings";
 import displayOllamaSettings from "./ollama/ollamaSettings";
+import displayBedrockSettings from "./bedrock/bedrockSettings";
 
-const displayModelSettings = (containerEl: HTMLElement, plugin: QuizGenerator, refreshSettings: () => void): void => {
+const displayModelSettings = async (containerEl: HTMLElement, plugin: QuizGenerator, refreshSettings: () => void): Promise<void> => {
 	new Setting(containerEl).setName("Model").setHeading();
 
 	new Setting(containerEl)
@@ -40,6 +41,8 @@ const displayModelSettings = (containerEl: HTMLElement, plugin: QuizGenerator, r
 		displayCohereSettings(containerEl, plugin, refreshSettings);
 	} else if (plugin.settings.provider === Provider.OLLAMA) {
 		displayOllamaSettings(containerEl, plugin, refreshSettings);
+	} else if (plugin.settings.provider === Provider.BEDROCK) {
+		await displayBedrockSettings(containerEl, plugin, refreshSettings);
 	}
 };
 

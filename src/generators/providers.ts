@@ -6,6 +6,7 @@ export enum Provider {
 	MISTRAL = "MISTRAL",
 	COHERE = "COHERE",
 	OLLAMA = "OLLAMA",
+	BEDROCK = "BEDROCK",
 }
 
 export const providers: Record<Provider, string> = {
@@ -16,4 +17,5 @@ export const providers: Record<Provider, string> = {
 	[Provider.MISTRAL]: "Mistral",
 	[Provider.COHERE]: "Cohere",
 	[Provider.OLLAMA]: "Ollama",
+	[Provider.BEDROCK]: "AWS Bedrock",
 };

@@ -8,6 +8,7 @@ import PerplexityGenerator from "./perplexity/perplexityGenerator";
 import MistralGenerator from "./mistral/mistralGenerator";
 import CohereGenerator from "./cohere/cohereGenerator";
 import OllamaGenerator from "./ollama/ollamaGenerator";
+import BedrockGenerator from "./bedrock/bedrockGenerator";
 
 export default class GeneratorFactory {
 	private static generatorMap: { [key in Provider]: new (settings: QuizSettings) => Generator } = {
@@ -18,6 +19,7 @@ export default class GeneratorFactory {
 		[Provider.MISTRAL]: MistralGenerator,
 		[Provider.COHERE]: CohereGenerator,
 		[Provider.OLLAMA]: OllamaGenerator,
+		[Provider.BEDROCK]: BedrockGenerator,
 	};
 
 	public static createInstance(settings: QuizSettings): Generator {

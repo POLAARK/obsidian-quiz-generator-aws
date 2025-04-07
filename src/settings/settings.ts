@@ -13,7 +13,7 @@ export default class QuizSettingsTab extends PluginSettingTab {
 		this.plugin = plugin;
 	}
 
-	display(): void {
+	async display(): Promise<void> {
 		const { containerEl } = this;
 
 		containerEl.empty();
@@ -21,7 +21,7 @@ export default class QuizSettingsTab extends PluginSettingTab {
 		const refreshSettings = this.display.bind(this);
 
 		displayGeneralSettings(containerEl, this.plugin);
-		displayModelSettings(containerEl, this.plugin, refreshSettings);
+		await displayModelSettings(containerEl, this.plugin, refreshSettings);
 		displayGenerationSettings(containerEl, this.plugin);
 		displaySavingSettings(containerEl, this.plugin);
 	}

@@ -1,10 +1,10 @@
 {
-	"id": "quiz-generator",
+	"id": "obsidian-quiz-generator-aws",
 	"name": "Quiz Generator",
 	"version": "2.1.2",
 	"minAppVersion": "0.15.0",
 	"description": "Generate interactive flashcards from your notes using models from OpenAI (ChatGPT), Google (Gemini), Ollama (local LLMs), and more. Or manually create your own to use with the quiz UI.",
-	"author": "Edward Cui",
+	"author": "Edward Cui & POLAARK",
 	"authorUrl": "https://github.com/ECuiDev",
 	"isDesktopOnly": false
 }

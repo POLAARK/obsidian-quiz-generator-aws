@@ -6,8 +6,9 @@ import { DEFAULT_PERPLEXITY_SETTINGS, PerplexityConfig } from "./perplexity/perp
 import { DEFAULT_MISTRAL_SETTINGS, MistralConfig } from "./mistral/mistralConfig";
 import { CohereConfig, DEFAULT_COHERE_SETTINGS } from "./cohere/cohereConfig";
 import { DEFAULT_OLLAMA_SETTINGS, OllamaConfig } from "./ollama/ollamaConfig";
+import { BedrockConfig, DEFAULT_BEDROCK_SETTINGS } from "./bedrock/bedrockConfig";
 
-export interface ModelConfig extends OpenAIConfig, GoogleConfig, AnthropicConfig, PerplexityConfig, MistralConfig, CohereConfig, OllamaConfig {
+export interface ModelConfig extends OpenAIConfig, GoogleConfig, AnthropicConfig, PerplexityConfig, MistralConfig, CohereConfig, OllamaConfig, BedrockConfig {
 	provider: string;
 }
 
@@ -20,4 +21,5 @@ export const DEFAULT_MODEL_SETTINGS: ModelConfig = {
 	...DEFAULT_MISTRAL_SETTINGS,
 	...DEFAULT_COHERE_SETTINGS,
 	...DEFAULT_OLLAMA_SETTINGS,
+	...DEFAULT_BEDROCK_SETTINGS,
 };
